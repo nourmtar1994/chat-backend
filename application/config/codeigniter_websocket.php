@@ -7,7 +7,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * Time: 09:04 PM
  */
 $config['codeigniter_websocket'] = array(
-    'host' => '193.95.69.122',
+    'host' => '127.0.0.1',
     'port' => 8282,
     'timer_enabled' => false,
     'timer_interval' => 1, //1 means 1 seconds
