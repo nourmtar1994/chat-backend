@@ -92,14 +92,13 @@
             seconds.
             <?php echo (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?>
         </p>
-    </div> <?php $idr =  $_GET['idr'];  ?>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-    var conn = new WebSocket('ws://localhost:8282');
+    var conn = new WebSocket('ws://193.95.69.122:8282');
     var client = {
-
         user_id: <?php echo $user_id; ?>,
-        recipient_id: 1,
+        recipient_id: null,
         type: 'socket',
         token: null,
         message: null
@@ -125,8 +124,9 @@
         client.message = $('#text').val();
         client.token = $('#token').text().split(': ')[1];
         client.type = 'chat';
-        client.recipient_id = <?php echo $idr; ?>;
-        console.log(client)
+        if ($('#recipient_id').val()) {
+            client.recipient_id = $('#recipient_id').val();
+        }
         conn.send(JSON.stringify(client));
     });
     </script>
