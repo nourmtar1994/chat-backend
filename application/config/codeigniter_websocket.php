@@ -11,6 +11,6 @@ $config['codeigniter_websocket'] = array(
     'port' => 8282,
     'timer_enabled' => false,
     'timer_interval' => 1, //1 means 1 seconds
-    'auth' => true,
+    'auth' => false,
     'debug' => true
 );
